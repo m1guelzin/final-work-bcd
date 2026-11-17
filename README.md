@@ -142,8 +142,12 @@ Conferência: o tutor não existe mais.
 
 Script: [`07_relatorios.sql`](scripts_sql/07_relatorios.sql). Todas as consultas usam `SELECT`, `JOIN`, `WHERE` e `ORDER BY`.
 
+### R1. Quais consultas estão agendadas? (agenda da clínica)
+
+![R1](prints/relatorios/R1.png)
+
 <details>
-<summary><b>R1. Quais consultas estão agendadas? (agenda da clínica)</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT c.data_hora,
@@ -160,8 +164,12 @@ ORDER BY c.data_hora;
 ```
 </details>
 
+### R2. Histórico de consultas do animal com prontuário PV-00010
+
+![R2](prints/relatorios/R2.png)
+
 <details>
-<summary><b>R2. Histórico de consultas do animal com prontuário PV-00010</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT p.numero_prontuario,
@@ -179,8 +187,12 @@ ORDER BY c.data_hora;
 ```
 </details>
 
+### R3. Alerta: animais que receberam um medicamento ao qual são alérgicos
+
+![R3](prints/relatorios/R3.png)
+
 <details>
-<summary><b>R3. Alerta: animais que receberam um medicamento ao qual são alérgicos</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT a.nome           AS animal,
@@ -197,8 +209,12 @@ ORDER BY c.data_hora;
 ```
 </details>
 
+### R4. Tutores de Curitiba e seus animais
+
+![R4](prints/relatorios/R4.png)
+
 <details>
-<summary><b>R4. Tutores de Curitiba e seus animais</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT t.nome AS tutor,
@@ -213,8 +229,12 @@ ORDER BY t.nome, a.nome;
 ```
 </details>
 
+### R5. Telefones dos tutores de gatos (para campanha de vacinação felina)
+
+![R5](prints/relatorios/R5.png)
+
 <details>
-<summary><b>R5. Telefones dos tutores de gatos (para campanha de vacinação felina)</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT t.nome  AS tutor,
@@ -229,8 +249,12 @@ ORDER BY t.nome;
 ```
 </details>
 
+### R6. Cirurgias realizadas com valor acima de R$ 1.500,00
+
+![R6](prints/relatorios/R6.png)
+
 <details>
-<summary><b>R6. Cirurgias realizadas com valor acima de R$ 1.500,00</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT c.data_hora,
@@ -248,8 +272,12 @@ ORDER BY c.valor_consulta DESC;
 ```
 </details>
 
+### R7. Quantas consultas realizadas cada veterinário fez (os 10 que mais atenderam)
+
+![R7](prints/relatorios/R7.png)
+
 <details>
-<summary><b>R7. Quantas consultas realizadas cada veterinário fez (os 10 que mais atenderam)</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT v.nome,
@@ -264,8 +292,12 @@ LIMIT 10;
 ```
 </details>
 
+### R8. Os 10 medicamentos mais prescritos
+
+![R8](prints/relatorios/R8.png)
+
 <details>
-<summary><b>R8. Os 10 medicamentos mais prescritos</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT m.nome_comercial,
@@ -281,8 +313,12 @@ LIMIT 10;
 ```
 </details>
 
+### R9. Faturamento por cidade (valor total das consultas realizadas, usando a view do atributo derivado valor_total)
+
+![R9](prints/relatorios/R9.png)
+
 <details>
-<summary><b>R9. Faturamento por cidade (valor total das consultas realizadas, usando a view do atributo derivado valor_total)</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT t.cidade,
@@ -298,8 +334,12 @@ ORDER BY faturamento DESC;
 ```
 </details>
 
+### R10. Animais com 12 anos ou mais (usando a view do atributo derivado idade)
+
+![R10](prints/relatorios/R10.png)
+
 <details>
-<summary><b>R10. Animais com 12 anos ou mais (usando a view do atributo derivado idade)</b></summary>
+<summary>Ver código SQL</summary>
 
 ```sql
 SELECT vi.nome AS animal,
